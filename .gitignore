@@ -1,0 +1,17 @@
+.gradle
+.DS_Store
+*/build/
+out/
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm
+*.iml
+*.ipr
+*.iws
+.idea/
+# Backup Files
+*~
+# Eclipse project files
+.classpath .project .DS_Store .DS_STORE
+# Folders related to builds and Gradle
+.gradle .gradle/ */build/ build/ /build .gradle/*
+#Swap
+.swp
