@@ -15,8 +15,8 @@ fun checkIsNumber(obj: Any) {
 
 fun main(args: Array<String>) {
 //    try {
-//        basic.tidbits.checkIsNumber("Hello")
-//    } catch (e: basic.tidbits.NotANumberException) {
+//        checkIsNumber("Hello")
+//    } catch (e: NotANumberException) {
 //        println("${e.message}")
 //    } catch (e: IllegalArgumentException) {
 //        println("What! No...")

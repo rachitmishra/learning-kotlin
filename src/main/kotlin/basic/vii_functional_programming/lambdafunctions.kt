@@ -2,6 +2,8 @@ package basic.vii_functional_programming
 
 /**
  * Lambdas
+ *
+ *  { value -> value * value }
  */
 
 fun unaryOp(num1: Int, op: (Int) -> Int) {
@@ -22,7 +24,7 @@ fun transaction(db: Database, code: () -> Unit) { // example of micro DSL (domai
 
 fun main(args: Array<String>) {
     println(operation(1, 3, { x, y -> x + y })) // Lambda expression
-
+    
     val myLambda: (Int, Int) -> Int = { x, y -> x + y } // Type is required as compiler fails to infer type where the lambda function will be used
     println(myLambda(1, 2))
     unaryOp(2, { x -> x * 2 })
@@ -33,7 +35,7 @@ fun main(args: Array<String>) {
     unaryOp {
         it * it
     } // yay! multi-line -> pass a function
-
+    
     val db = Database()
     transaction(db) {
         // Perform the operation
@@ -48,3 +50,5 @@ fun main(args: Array<String>) {
         return 1
     })
 }
+
+val myLambda: (Int, Int) -> Int = { x, y -> x + y } // initialises lambda to myLamda

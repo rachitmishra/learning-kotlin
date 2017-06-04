@@ -15,11 +15,11 @@ fun myFunction2(country: String = "India") : Triple<String, String, Long> {
 }
 
 fun main(args: Array<String>) {
-//    val myPair = basic.tidbits.myFunction()
+//    val myPair = myFunction()
 //    println(myPair.first)
 //    println(myPair.second)
 
-//    val myPair2 = basic.tidbits.myFunction2()
+//    val myPair2 = myFunction2()
 //    println(myPair2.first)
 //    println(myPair2.second)
 //    println(myPair2.third)
@@ -30,7 +30,7 @@ fun main(args: Array<String>) {
     println(population)
     println(id)
     println(name)
-
+    
     val myPairs = listOf(Pair("delhi", "india"), "islamabad" to "pakistan")
     for ((capital, country) in myPairs) {
         println(capital +"-"+ country)

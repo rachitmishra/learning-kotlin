@@ -1,7 +1,7 @@
 package basic.vi_tidbits
 
 /**
- * basic.tidbits.Constants
+ * Constants
  */
 
 object Constants {

@@ -14,5 +14,8 @@ fun main(args: Array<String>) {
     val myNumbers = generateSequence(100) { x -> x * 10 }
     println(myNumbers.take(30).sum())
     
-    val lazyInit: Int by lazy { 10 } // Lazy initialization of a value. only when it is needed it will be initialized
+    val lazyInit: Int by lazy { 10 } //
+    // Lazy initialization of a value. only when it is needed it will be initialized
+    
+    println(lazyInit)
 }

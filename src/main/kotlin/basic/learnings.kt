@@ -1,5 +1,5 @@
 /**
- * Learnings
+ * Learning(s)
  */
 
 // Kotlin is not immutable by default
@@ -48,4 +48,9 @@
 // Using inner keyword for nested class we can access members from parent class
 // if object is instance of functional java interface or has single method it can be created with a lambda expression
 // We can declared function inside functions :| inception
-//  /* with is a high order function */
+// `with` is a high order function which helps us in checking a condition then executing a statement
+// value to value2, using to we can create a pair
+// we can deconstruct/destructure values from data classes eg val(id, name) = MyDataClass(1, "Ravi")
+// if we don't wish to use any of decontructed param we can use `_` in place of them val(id, _)
+// If the lambda parameter is unused, you can place an underscore instead of its name:
+// val lazyInit: Int by lazy { 10 } Lazy initialization of a value. only when it is needed it will be initialized
