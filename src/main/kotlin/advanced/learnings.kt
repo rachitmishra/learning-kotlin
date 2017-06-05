@@ -40,3 +40,5 @@
 // We use `in` modifier to indicate contravariance (similar to ? super T) at declaration site rather than at use site
 // element of generic type *
 // `reified` Avoids type erasure and preserves the type
+// only type params of inline functions can be reified
+// kotlines coroutines are stackless helping in suspendable computation

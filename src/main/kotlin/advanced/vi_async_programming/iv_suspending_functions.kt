@@ -1,11 +1,8 @@
 package advanced.vi_async_programming
 
-import kotlinx.coroutines.experimental.async
-
 /**
  * Coroutines
  */
-
 
 suspend fun myFunction() {
      // do something for really long

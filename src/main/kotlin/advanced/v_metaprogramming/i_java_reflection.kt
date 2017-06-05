@@ -1,5 +1,6 @@
 package advanced.v_metaprogramming
 
+import jdk.nashorn.internal.objects.NativeArray.forEach
 import java.lang.reflect.Type
 
 /**
@@ -11,12 +12,15 @@ class Transaction(val id: Int, val amount: Int) {
 }
 
 fun introspectInspection(obj: Any) {
-    println("${obj.javaClass.simpleName}")
+    println(obj.javaClass.simpleName)
     println("Properties")
     obj.javaClass.declaredFields.forEach {
         println(it.name)
     }
     
+    obj.javaClass.declaredMethods.forEach {
+        println(it.name)
+    }
 }
 
 fun getType(obj: Type) {

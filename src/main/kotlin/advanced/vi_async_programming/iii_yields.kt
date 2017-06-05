@@ -9,6 +9,8 @@ import kotlinx.coroutines.experimental.yield
 fun main(args: Array<String>) {
     val sequence = 1..10
     sequence.forEach {
-        //yield(1)
+        async {
+            // yield(1)
+        }
     }
 }
