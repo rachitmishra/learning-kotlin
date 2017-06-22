@@ -2,6 +2,7 @@ package advanced.vi_async_programming
 
 import io.reactivex.Observable
 import retrofit2.Retrofit
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -19,16 +20,8 @@ fun main(args: Array<String>) {
     val retrofit = Retrofit.Builder().apply {
         baseUrl("https://api.github.com")
         addConverterFactory(GsonConverterFactory.create())
-        addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+        addCallAdapterFactory(RxJava2CallAdapterFactory.create())
     }.build()
     
     val github = retrofit.create(GitHub::class.java)
-    
-    asyncRx<Unit> {
-        for (org in listOf("Kotlin", "ReactiveX")) {
-            val result = github.orgRepos(org).take(5).await()
-            val repos = result.joinToString()
-            println("$org: $repos")
-        }
-    }
 }

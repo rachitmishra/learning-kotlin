@@ -21,6 +21,7 @@ class ICantBeCreate private constructor() {
 
 // class initialised with constructor
 class EmployeeWithPrimaryConstruct constructor(var name: String) {
+    var str: String? = null
     init {
         // primary constructor initializations go in init block
     }
