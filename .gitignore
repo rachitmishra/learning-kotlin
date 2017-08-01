@@ -1,6 +1,7 @@
 .gradle
 .DS_Store
 */build/
+build/*
 out/
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm
 *.iml
