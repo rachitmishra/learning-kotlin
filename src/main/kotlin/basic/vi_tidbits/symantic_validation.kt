@@ -1,7 +1,5 @@
 package basic.vi_tidbits
 
-import com.sun.tools.javac.jvm.ByteCodes.ret
-
 /**
  * Semantic validation
  */

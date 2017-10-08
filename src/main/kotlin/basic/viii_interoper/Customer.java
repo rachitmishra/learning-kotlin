@@ -1,7 +1,5 @@
 package basic.viii_interoper;
 
-import org.jetbrains.annotations.NotNull;
-
 /**
  * Interop with java
  */
@@ -26,7 +24,7 @@ public class Customer {
         this.id = id;
     }
 
-    public @NotNull String myString() {
+    String myString() {
         return "My string";
     }
 
