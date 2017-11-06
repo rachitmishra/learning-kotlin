@@ -1,4 +1,4 @@
-package di
+package di.dependencies
 
 open class Ram(val mSize: Int)
 

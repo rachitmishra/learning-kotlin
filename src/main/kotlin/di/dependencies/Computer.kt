@@ -1,4 +1,4 @@
-package di
+package di.dependencies
 
 data class Computer(private val cpu: Cpu,
                     private val ram: Ram,

@@ -2,28 +2,33 @@ package di
 
 import dagger.Module
 import dagger.Provides
+import di.dependencies.*
+import javax.inject.Named
 
 @Module
-open class ComputerModule(private val memorySize: Int,
-                          private val vMemorySize: Int,
-                          private val powerSize: Int) {
-    
-    @Provides
-    fun providesCpu(): Cpu = CpuX64()
+abstract class ComputerModule(private val memorySize: Int,
+                              private val vMemorySize: Int) {
     
     @Provides
     fun providesRam(): Ram = Ddr5Ram(memorySize)
     
     @Provides
-    fun providesPowerSupply(): Psu = Psu(powerSize)
-    
-    @Provides
-    fun providesMotherboard(cpu: Cpu, ram: Ram, vRam: VideoRam): Motherboard = Gigabyte(cpu, ram, vRam)
+    @Named("large")
+    fun providesLargeGraphicRam(): VideoRam = Ddr5VideoRam(vMemorySize)
     
     @Provides
     fun providesGraphicRam(): VideoRam = Ddr5VideoRam(vMemorySize)
     
     @Provides
-    fun providesComputer(motherboard: Motherboard, psu: Psu): Computer =
-            Computer(motherboard.mProcessor, motherboard.mRam, motherboard.mVideoRam, psu, motherboard)
+    fun providesMotherBoardWithLargeVideoRam(
+            processor: Cpu, ram: Ram, @Named("large") videoRam: VideoRam): Gigabyte
+            = Gigabyte(processor, ram, videoRam)
+    
+    @Module
+    companion object {
+        
+        @Provides
+        @JvmStatic
+        fun providesPowerSupply(): Psu = Psu()
+    }
 }
